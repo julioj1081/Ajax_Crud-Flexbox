@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous">
+ </script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Ajax</title>
+</head>
+<body>
+  <script src="app.js"></script>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        </button>
+        <a class="navbar-brand" href="#">Tareas</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <input type="search" id="search" class="form-control mr-sm-2">
+          </div>
+          <button type="submit" class="btn btn-success">Buscar</button>
+        </form>
+      </div><!--/.navbar-collapse -->
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-body">
+
+              <form id="task-form">
+                <!--Creamos un input te tipo hidden para que cuando mandemos a modificar--->
+                <input type="hidden" id="taskId">
+                <div class="form-group">
+                  <input type="text" id="name" placeholder="Task name" class="form-control">
+                </div>
+                <div class="form-group">
+                  <textarea id="description" rows="8" cols="80" class="form-control" placeholder="Descripcion de tarea"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block text-center">Guardar tarea</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="card" id="task-result">
+            <div class="card-body">
+              <ul id="container"></ul>
+            </div>
+          </div>
+          <table class="table table-bordered table-sm">
+            <thead><tr><td>Id tarea</td><td>Nombre</td><td>Descripccion</td></tr></thead>
+            <tbody id="tasks">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
